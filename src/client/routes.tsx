@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { BrowserRouter, Route, Switch, StaticRouter } from 'react-router-dom';
 

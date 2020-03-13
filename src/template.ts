@@ -3,9 +3,7 @@
 export function template(title, initialState = {}, content = '') {
     let scripts = '';
     if (content) {
-        scripts = ` <script>
-                   window.__STATE__ = ${JSON.stringify(initialState)}
-                </script>
+        scripts = `
                 <script src="/client.js"></script>
                 `;
     } else {
