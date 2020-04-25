@@ -1,13 +1,13 @@
 //@ts-nocheck
 
-export function template(title, initialState = {}, content = '') {
+export function template(title, content = '') {
     let scripts = '';
     if (content) {
         scripts = `
                 <script src="/client.js"></script>
                 `;
     } else {
-        scripts = `<script src="/bundle.js"> </script> `;
+        scripts = `<script src="/bundle.js"></script> `;
     }
     let page = `<!DOCTYPE html>
               <html lang="en">
@@ -15,7 +15,7 @@ export function template(title, initialState = {}, content = '') {
                 <meta charset="utf-8">
                 <title> ${title} </title>
               </head>
-              <body>
+              <body style="margin: 0">
                 <div class="content">
                    <div id="app" class="wrap-inner">
                       ${content}

@@ -6,12 +6,11 @@ const customScalarResolver = {
     Date: GraphQLDateTime,
 };
 
+
 export const userResolver = {
     ...customScalarResolver,
-    user: ({ id }) => {
-        const user = getUserDb(id);
-
-        return user;
+    user: (parentValue, args, req) => {
+        return req.req.user;
     },
     userTrips: ({ id }) => {
         const user = getUserDb(id);

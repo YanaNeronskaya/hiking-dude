@@ -1,16 +1,15 @@
 // @ts-nocheck
 import passport from 'koa-passport';
-import FacebookStrategy from 'passport-facebook';
+import {OAuth2Strategy} from 'passport-google-oauth';
 
 import { config } from './config';
 
 passport.use(
-    new FacebookStrategy(
+    new OAuth2Strategy(
         {
-            clientID: config.facebook.clientId,
-            clientSecret: config.facebook.clientSecret,
-            callbackURL: config.facebook.callbackUrl,
-            profileFields: config.facebook.profileFields,
+            clientID: config.google.clientId,
+            clientSecret: config.google.clientSecret,
+            callbackURL: config.google.callbackUrl,
         },
         (accessToken, refreshToken, profile, done) => {
             return done(null, profile);

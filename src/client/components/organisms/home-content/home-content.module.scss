@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 105px;
+}
+
+.btnBlock {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnBlockText,
+.btnBlockBtn {
+    font-family: 'Baloo Bhai 2';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.btnBlockText {
+    color: #6F6571;
+    text-align: center;
+}
+
+.btnBlockBtn {
+    width: 100%;
+    height: 50px;
+    color: #FFFFFF;
+    border-radius: 50px;
+    border-color: transparent;
+    background-color: #FF485A;
+}
+
+.imagesBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}

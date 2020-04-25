@@ -1,57 +1,44 @@
 // @ts-nocheck
 
 import passport from './passport';
+import { BASE_ROUTES, USER_ROUTES } from '../constants/routes';
 
-export const api = router => {
-    function* isLoggedIn(next) {
-        if (this.req.isAuthenticated()) {
-            yield next;
-        } else {
-            this.redirect('/api');
-        }
-    }
+export let api = router => {
+    // function* isLoggedIn(ctx, next) {
+    //     if (ctx.request.isAuthenticated()) {
+    //         yield next;
+    //     } else {
+    //         this.redirect('/api');
+    //     }
+    // }
 
-    router.get('/auth', function*(next) {
-        if (this.req.user) {
-            this.redirect('/api/success');
-        } else {
-            this.body = {
-                status: 'success',
-                data:
-                    "Hi! If you see this message, it means you're not login yet",
-            };
-        }
-    });
+    // // router.get(
+    // //     '/login',
+    // //     passport.authenticate('google', {
+    // //         scope: ['https://www.googleapis.com/auth/plus.login'],
+    // //     })
+    // // );
 
-    router.get(
-        '/login',
-        passport.authenticate('facebook', {
-            scope: ['public_profile', 'email'],
-        })
-    );
+    // router.get(
+    //     '/auth/google/callback',
+    //     passport.authenticate('google'),
+    //     ctx => {
+    //         const user = ctx.req.user;
 
-    router.get(
-        '/auth/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/api/success',
-            failureRedirect: '/api',
-        })
-    );
+    //         if (user.id) {
+    //             ctx.res.body = user;
+    //             //ctx.redirect(USER_ROUTES.USER_CABINET);
+    //         } else ctx.redirect(BASE_ROUTES.ERROR_LOGIN);
+    //     }
+    // );
 
-    router.get('/success', isLoggedIn, function*(next) {
-        this.body = {
-            status: 'success',
-            data: this.req.user,
-        };
-    });
+    // router.get('/logout', isLoggedIn, function*(next) {
+    //     this.req.logout();
+    //     this.body = {
+    //         status: 'success',
+    //         data: 'logout success',
+    //     };
+    // });
 
-    router.get('/logout', isLoggedIn, function*(next) {
-        this.req.logout();
-        this.body = {
-            status: 'success',
-            data: 'logout success',
-        };
-    });
-
-    return router;
+    // return router;
 };

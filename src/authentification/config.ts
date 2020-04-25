@@ -8,4 +8,9 @@ export const config = {
         callbackUrl: 'http://localhost:3000/api/auth/callback',
         profileFields: ['id', 'displayName', 'photos', 'email'],
     },
+    google: {
+        clientId: '662995311811-j286cauh5ed375sjufi2400lbsbufd0f.apps.googleusercontent.com',
+        clientSecret: 'bdaZ77TiApF2kFXwtWyj0FC8',
+        callbackUrl: 'http://localhost:3000/api/auth/google/callback',
+    }
 };
