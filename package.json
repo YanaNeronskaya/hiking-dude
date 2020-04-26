@@ -11,7 +11,8 @@
     "pack": "webpack --config webpack.config.js",
     "babel": "babel src -d dist",
     "build": "npm run pack && npm run babel",
-    "scss": "node-sass -watch scss -o css"
+    "scss": "node-sass -watch scss -o css",
+    "stylelint": "stylelint '**/*.scss' --fix"
   },
   "author": "Yana Kanavalik <yana.nernskaya@gmail.com>",
   "license": "MIT",
@@ -119,5 +120,9 @@
   "homepage": "https://github.com/YanaNeronskaya/hiking-dude#readme",
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "devDependencies": {
+    "stylelint": "^13.3.3",
+    "stylelint-order": "^4.0.0"
   }
 }

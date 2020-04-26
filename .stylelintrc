@@ -1,0 +1,16 @@
+{
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"order/properties-order": [
+      "position",
+      "z-index",
+      "top",
+      "right",
+      "bottom",
+      "left",
+    ],
+		"order/properties-alphabetical-order": true
+	}
+}

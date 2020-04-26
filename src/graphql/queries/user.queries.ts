@@ -6,7 +6,7 @@ export const typeDef = `
     surname: String,
     email: String,
     age: Int,
-    address: String,
+    residence: String,
     trips: [Trip],
   }
 `;

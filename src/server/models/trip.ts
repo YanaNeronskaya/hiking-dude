@@ -18,7 +18,7 @@ export const TripSchema = new Schema({
     id: ObjectId,
     name: String,
     userId: ObjectId,
-    address: String,
+    residence: String,
     totalPeriodDays: Number,
     stoppingPoints: [StoppingPointSchema],
 });

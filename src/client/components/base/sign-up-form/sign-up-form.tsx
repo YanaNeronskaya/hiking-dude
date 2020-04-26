@@ -46,7 +46,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
         event.preventDefault();
 
         mutate({
-            variables: { email, password },
+            variables: { name, surname, residence, email, password },
             refetchQueries: [
                 {
                     query: getCurrentUser,

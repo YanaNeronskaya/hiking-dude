@@ -5,7 +5,9 @@ export const getCurrentUser = qql`
     user {
       _id
       email
-      name
+      name,
+      surname,
+      residence
     }
   }
 `;

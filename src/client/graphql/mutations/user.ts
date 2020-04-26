@@ -19,9 +19,12 @@ export const userLogIn = qql`
 `;
 
 export const userSignUp = qql`
-    mutation Signup($email: String, $password:String) {
-        signup(email: $email, password: $password) {
+    mutation Signup($name: String, $surname: String, $residence: String, $email: String, $password:String) {
+        signup(name: $name, surname: $surname, residence: $residence, email: $email, password: $password) {
             _id
+            name,
+            surname, 
+            residence,
             email
         }
     }

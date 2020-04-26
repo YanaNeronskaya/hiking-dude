@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { makeExecutableSchema } from 'graphql-tools';
 import { typeDef as UserTypeDef } from '../queries/user.queries';
 import { typeDefStoppingPoint, typeDefTrip } from '../queries/trip.queries';
@@ -14,7 +15,7 @@ const Query = `
 
 const Mutation = `
   type Mutation {
-    signup(email: String, password: String): User,
+    signup(name: String, surname: String, residence: String, email: String, password: String): User,
     login(email: String, password: String): User,
     logout: User
     }
@@ -23,9 +24,12 @@ const Mutation = `
 const resolvers = {
     Query: userResolver,
     Mutation: {
-        //@ts-ignore
-        signup: (parent, { email, password }, req) => {
-            return signup({ email, password, req });
+        signup: (
+            parent,
+            { name, surname, residence, email, password },
+            req
+        ) => {
+            return signup({ name, surname, residence, email, password, req });
         },
         //@ts-ignore
         login: (parent, { email, password }, req) => {

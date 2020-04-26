@@ -6,14 +6,14 @@ import { getCurrentUser } from '../../graphql/queries/user';
 import { USER_ROUTES } from '../../../constants/routes';
 import { Loader } from '../organisms/loader/loader.component';
 
-interface RocketInventoryData {
+interface authData {
     data: any;
 }
 
 export const withAuth = WrappedComponent => {
     const RequireAuth: React.FC<{}> = () => {
         const history = useHistory();
-        const { loading, data } = useQuery<RocketInventoryData>(getCurrentUser);
+        const { loading, data } = useQuery<authData>(getCurrentUser);
 
         useEffect(() => {
             if (!loading && !data.user) {

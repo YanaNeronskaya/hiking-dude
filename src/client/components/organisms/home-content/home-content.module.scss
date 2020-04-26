@@ -1,27 +1,27 @@
 .container {
+    align-items: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    align-items: center;
+    justify-content: center;
     justify-content: space-between;
     margin-top: 105px;
 }
 
 .btnBlock {
-    max-width: 200px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    max-width: 200px;
 }
 
 .btnBlockText,
 .btnBlockBtn {
     font-family: 'Baloo Bhai 2';
-    font-weight: 700;
     font-size: 24px;
+    font-weight: 700;
     line-height: 28px;
 }
 
@@ -31,16 +31,16 @@
 }
 
 .btnBlockBtn {
-    width: 100%;
-    height: 50px;
-    color: #FFFFFF;
-    border-radius: 50px;
-    border-color: transparent;
     background-color: #FF485A;
+    border-color: transparent;
+    border-radius: 50px;
+    color: #FFFFFF;
+    height: 50px;
+    width: 100%;
 }
 
 .imagesBlock {
+    align-items: flex-end;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
 }

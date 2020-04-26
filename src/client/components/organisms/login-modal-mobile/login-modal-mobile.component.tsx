@@ -6,9 +6,9 @@ import { BASE_ROUTES, USER_ROUTES } from '../../../../constants/routes';
 import { Modal } from '../../base/modal/modal.component';
 import { getCurrentUser } from '../../../graphql/queries/user';
 import { userLogOut } from '../../../graphql/mutations/user';
+import { Loader } from '../loader/loader.component';
 //@ts-ignore
 import css from './login-modal-mobile.module.scss';
-import { Loader } from '../loader/loader.component';
 
 type LoginModalMobileProps = {
     isOpen: boolean;
@@ -30,9 +30,13 @@ const renderModalAuthBtn = (
                 <Link to={USER_ROUTES.USER_CABINET} className={css.contentText}>
                     Account
                 </Link>
-                <button className={css.contentText} onClick={onLogOutClick}>
+                <Link
+                    to={BASE_ROUTES.HOME}
+                    className={css.contentText}
+                    onClick={onLogOutClick}
+                >
                     Logout
-                </button>
+                </Link>
             </>
         );
     } else {

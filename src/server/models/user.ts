@@ -14,9 +14,9 @@ const UserSchema = new Schema({
     id: ObjectId,
     name: String,
     surname: String,
+    residence: String,
     email: String,
     password: String,
-    address: String,
     trips: [TripSchema],
 });
 

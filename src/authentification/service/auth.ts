@@ -40,8 +40,8 @@ passport.use(
     })
 );
 
-export function signup({ email, password, req }) {
-    const user = new User({ email, password });
+export function signup({ name, surname, residence, email, password, req }) {
+    const user = new User({ name, surname, residence, email, password });
     if (!email || !password) {
         throw new Error('You must provide an email and password.');
     }
