@@ -7,7 +7,7 @@
     "npm": "5.7.1"
   },
   "scripts": {
-    "start": "npm run pack && npm run babel && ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "pack": "webpack --config webpack.config.js",
     "babel": "babel src -d dist",
     "build": "npm run pack && npm run babel",
