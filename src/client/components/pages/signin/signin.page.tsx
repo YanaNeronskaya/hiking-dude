@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { Header } from '../../organisms/header/header.component';
 import { SignUpForm } from '../../base/sign-up-form/sign-up-form';
 
- // @ts-ignore
+// @ts-ignore
 import css from '../login/login.module.scss';
 // @ts-ignore
 import GoogleSvg from '../../../toCDN/googlePlus.svg';
@@ -30,7 +30,7 @@ export const SignInPage: FC<SignInPageProps> = () => {
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Sign in</title>
+                <title>Hiking-dude | Sign in</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"

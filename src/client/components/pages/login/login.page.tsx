@@ -4,12 +4,10 @@ import { Helmet } from 'react-helmet';
 import { Header } from '../../organisms/header/header.component';
 import { LoginForm } from '../../base/login-form/login-form';
 
-
 // @ts-ignore
 import css from './login.module.scss';
 // @ts-ignore
 import GoogleSvg from '../../../toCDN/googlePlus.svg';
-
 
 type LoginPageProps = {};
 
@@ -32,7 +30,7 @@ export const LogInPage: FunctionComponent<LoginPageProps> = () => {
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Log in</title>
+                <title>Hiking-dude | Log in</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
@@ -49,7 +47,7 @@ export const LogInPage: FunctionComponent<LoginPageProps> = () => {
                         Please, enter your email and password:
                     </p>
                     <div className={css.formContainer}>
-                        <LoginForm handleFormSubmit={handleFormSubmit}/>
+                        <LoginForm handleFormSubmit={handleFormSubmit} />
                     </div>
                     {/* <div className={css.socialRegistrations}>
                     <button

@@ -8,13 +8,13 @@ import css from './user-cabinet.module.scss';
 
 type UserCabinetProps = {}
 
-export const UserCabinet: FunctionComponent<UserCabinetProps> = () => {
+export const UserCabinet: FunctionComponent<UserCabinetProps> = (props) => {
 
     return (
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>User's cabinet</title>
+                <title>Hiking-dude | User's cabinet</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"

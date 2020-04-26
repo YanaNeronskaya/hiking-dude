@@ -1,5 +1,7 @@
 //@ts-nocheck
 
+import favicon from './client/toCDN/favicon.ico';
+
 export function template(title, content = '') {
     let scripts = '';
     if (content) {
@@ -14,6 +16,7 @@ export function template(title, content = '') {
               <head>
                 <meta charset="utf-8">
                 <title> ${title} </title>
+                <link rel="shortcut icon" href="favicon.ico">
               </head>
               <body style="margin: 0">
                 <div class="content">

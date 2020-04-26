@@ -112,6 +112,10 @@ module.exports = [
                     loader: ['null-loader'],
                 },
                 {
+                    test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                    loader: 'file-loader?name=[name].[ext]',
+                },
+                {
                     test: /\.svg$/,
                     use: [
                         {
