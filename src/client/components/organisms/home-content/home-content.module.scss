@@ -18,7 +18,7 @@
 }
 
 .btnBlockText,
-.btnBlockBtn {
+.btnGo {
     font-family: 'Baloo Bhai 2';
     font-size: 24px;
     font-weight: 700;
@@ -30,12 +30,16 @@
     text-align: center;
 }
 
-.btnBlockBtn {
+.btnGo {
+    align-items: center;
     background-color: #FF485A;
     border-color: transparent;
     border-radius: 50px;
     color: #FFFFFF;
+    display: flex;
     height: 50px;
+    justify-content: center;
+    text-decoration: none;
     width: 100%;
 }
 

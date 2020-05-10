@@ -7,7 +7,7 @@ import css from './modal.module.scss';
 
 type ModalProps = {
     isOpen: boolean;
-    isCloseIconEnabled: boolean;
+    isCloseIconEnabled?: boolean;
     children?: any;
     onClose?: any;
 };

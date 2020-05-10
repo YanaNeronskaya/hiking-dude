@@ -6,8 +6,6 @@ import { SignUpForm } from '../../base/sign-up-form/sign-up-form';
 
 // @ts-ignore
 import css from '../login/login.module.scss';
-// @ts-ignore
-import GoogleSvg from '../../../toCDN/googlePlus.svg';
 
 type SignInPageProps = {};
 
@@ -38,7 +36,7 @@ export const SignInPage: FC<SignInPageProps> = () => {
                 <link
                     href="https://fonts.googleapis.com/css?family=Baloo+Bhai+2&display=swap"
                     rel="stylesheet"
-                ></link>
+                />
             </Helmet>
             <div className={css.mainContainer}>
                 <Header />

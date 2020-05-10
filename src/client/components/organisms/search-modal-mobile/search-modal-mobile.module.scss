@@ -1,0 +1,73 @@
+.searchContentMobileContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBlock {
+    display: flex;
+    border: 1px solid #ff485a;
+    border-radius: 15px;
+}
+
+.searchIcon {
+    fill: #ff485a;
+}
+
+.btnSearch,
+.btnBack {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+
+        .searchIcon {
+            fill: #fdd9dc;
+        }
+    }
+}
+
+.searchField {
+    font-family: 'Baloo Bhai 2';
+    width: 100%;
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    border-left: 1px solid #ff485a;
+    border-right: 1px solid #ff485a;
+    font-weight: bold;
+    color: #6f6571;
+    padding: 20px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    outline-color: #ff485a;
+
+    &::placeholder {
+        color: #e5e5e5;
+        text-align: center;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: bold;
+    }
+}
+
+.autocompleteWrapper {
+    margin-left: 15px;
+}
+
+.autocompletePosition {
+    font-family: 'Baloo Bhai 2';
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #6f6571;
+    padding: 15px;
+    border-left: 1px solid #6f6571;
+    margin-top: 40px;
+}

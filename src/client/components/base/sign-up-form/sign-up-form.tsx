@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { graphql } from 'react-apollo';
 import { useHistory } from 'react-router-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { userSignUp } from '../../../graphql/mutations/user';
 import { getCurrentUser } from '../../../graphql/queries/user';
 import { USER_ROUTES } from '../../../../constants/routes';
@@ -66,7 +66,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
                 name="name"
                 placeholder="name"
                 value={name}
-                className={classnames({
+                className={classNames({
                     [css.inputField]: true,
                     [css.inputFieldSelected]: !!email,
                 })}
@@ -78,7 +78,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
                 name="surname"
                 placeholder="surname"
                 value={surname}
-                className={classnames({
+                className={classNames({
                     [css.inputField]: true,
                     [css.inputFieldSelected]: !!email,
                 })}
@@ -90,7 +90,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
                 name="residence"
                 placeholder="residence"
                 value={residence}
-                className={classnames({
+                className={classNames({
                     [css.inputField]: true,
                     [css.inputFieldSelected]: !!email,
                 })}
@@ -102,7 +102,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
                 name="email"
                 placeholder="email"
                 value={email}
-                className={classnames({
+                className={classNames({
                     [css.inputField]: true,
                     [css.inputFieldSelected]: !!email,
                 })}
@@ -113,7 +113,7 @@ const SignUpFormContent: FC<SignUpFormContentProps> = ({
                 name="password"
                 placeholder="password"
                 value={password}
-                className={classnames({
+                className={classNames({
                     [css.inputField]: true,
                     [css.inputFieldSelected]: !!email,
                 })}

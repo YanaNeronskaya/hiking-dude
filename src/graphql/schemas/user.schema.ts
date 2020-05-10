@@ -1,7 +1,7 @@
-// @ts-nocheck
 import { makeExecutableSchema } from 'graphql-tools';
 import { typeDef as UserTypeDef } from '../queries/user.queries';
-import { typeDefStoppingPoint, typeDefTrip } from '../queries/trip.queries';
+import { typeDefStoppingPoint } from '../queries/stopping-point.queries';
+import { typeDefTrip } from '../queries/trip.queries';
 import { userResolver } from '../resolvers/user.resolver';
 import { signup, login } from '../../authentification/service/auth';
 
@@ -9,7 +9,6 @@ const Query = `
   type Query {
     user: User,
     Date: Date,
-    userTrips(id: ID!): [Trip]
   }
 `;
 
@@ -25,9 +24,9 @@ const resolvers = {
     Query: userResolver,
     Mutation: {
         signup: (
-            parent,
-            { name, surname, residence, email, password },
-            req
+            parent: any,
+            { name, surname, residence, email, password }: any,
+            req: any
         ) => {
             return signup({ name, surname, residence, email, password, req });
         },
@@ -47,5 +46,6 @@ const resolvers = {
 
 export const userSchema = makeExecutableSchema({
     typeDefs: [Mutation, Query, UserTypeDef, typeDefStoppingPoint, typeDefTrip],
+    //@ts-ignore
     resolvers,
 });

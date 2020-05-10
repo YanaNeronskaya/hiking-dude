@@ -1,8 +1,7 @@
 export const BASE_ROUTES = {
     HOME: '/',
-    LOGIN: '/login',
-    COUNTRY: '/',
-    LOGIN_PAGE: '/login-page',
+    TRIPS_COLLECTIONS: '/trips-collections/',
+    TRIPS_COLLECTIONS_LOCATION: '/trips-collections/:id',
     ERROR_LOGIN: '/error-login'
 };
 
@@ -12,4 +11,8 @@ export const USER_ROUTES = {
     ADD_NEW: '/addUser',
     SIGN_IN: '/signIn',
     LOG_IN: '/logIn',
+};
+
+export const SERVER_ROUTES = {
+    UPDATE_ATTRACTIONS: '/update-attractions'
 };

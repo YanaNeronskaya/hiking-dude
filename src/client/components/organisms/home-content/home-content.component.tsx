@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { BtnPageUp } from '../../base/btn-page-up/btn-page-up.component';
+import { Link } from 'react-router-dom';
+import { BASE_ROUTES } from '../../../../constants/routes';
 
 // @ts-ignore
 import ForestSvg from '../../../toCDN/forest.svg';
@@ -13,6 +13,7 @@ import TravelBagsSvg from '../../../toCDN/travel.svg';
 // @ts-ignore
 import css from './home-content.module.scss';
 
+
 export const HomeContent = () => {
     return (
         <>
@@ -21,7 +22,12 @@ export const HomeContent = () => {
                     <p className={css.btnBlockText}>
                         Plan your trips in right for you way
                     </p>
-                    <button className={css.btnBlockBtn}>Start</button>
+                    <Link
+                        to={BASE_ROUTES.TRIPS_COLLECTIONS}
+                        className={css.btnGo}
+                    >
+                        Start
+                    </Link>
                 </div>
                 <PlaneSvg width={40} height={40} />
                 <div className={css.imagesBlock}>

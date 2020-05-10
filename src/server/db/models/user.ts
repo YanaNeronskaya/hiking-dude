@@ -5,10 +5,9 @@ import bcrypt from 'bcrypt-nodejs';
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-
 import { TripSchema } from './trip';
 
-const userModelName = 'user';
+const userModelName = 'User';
 
 const UserSchema = new Schema({
     id: ObjectId,

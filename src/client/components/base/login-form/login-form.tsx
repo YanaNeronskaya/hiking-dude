@@ -40,7 +40,7 @@ const LoginFormContent: FC<LoginFormContentProps> = ({
     }, [data]);
 
     const onFormSubmit = (e: React.FormEvent) => {
-        event.preventDefault();
+        e.preventDefault();
         mutate({
             variables: { email, password },
             refetchQueries: [

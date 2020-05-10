@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-const User = mongoose.model('user');
+import { UsersModel} from '../../server/db/models/user';
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -20,7 +20,7 @@ passport.serializeUser((user, done) => {
 
 passport.use(
     new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-        User.findOne({ email: email.toLowerCase() }, (err, user) => {
+        UsersModel.findOne({ email: email.toLowerCase() }, (err, user) => {
             if (err) {
                 return done(err);
             }
@@ -41,12 +41,12 @@ passport.use(
 );
 
 export function signup({ name, surname, residence, email, password, req }) {
-    const user = new User({ name, surname, residence, email, password });
+    const user = new UsersModel({ name, surname, residence, email, password });
     if (!email || !password) {
         throw new Error('You must provide an email and password.');
     }
 
-    return User.findOne({ email })
+    return UsersModel.findOne({ email })
         .then(existingUser => {
             if (existingUser) {
                 throw new Error('Email in use');

@@ -49,14 +49,6 @@ export const LogInPage: FunctionComponent<LoginPageProps> = () => {
                     <div className={css.formContainer}>
                         <LoginForm handleFormSubmit={handleFormSubmit} />
                     </div>
-                    {/* <div className={css.socialRegistrations}>
-                    <button
-                        className={css.logInBtn}
-                        onClick={handleLoginBtnClick(LogInTypes.GOOGLE)}
-                    >
-                        <GoogleSvg width={50} height={50}/>
-                    </button>
-                    </div> */}
                 </div>
             </div>
         </>

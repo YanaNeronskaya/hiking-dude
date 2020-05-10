@@ -7,6 +7,5 @@ export const typeDef = `
     email: String,
     age: Int,
     residence: String,
-    trips: [Trip],
   }
 `;

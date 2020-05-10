@@ -1,24 +1,10 @@
-// @ts-nocheck
-
-export const typeDefStoppingPoint = `
-    scalar Date
-
-    type StoppingPoint {
-        id: ID,
-        name: String,
-        from: String,
-        to: String,
-        dateFrom: Date,
-        dateTo: Date,
-    }
-`;
-
 export const typeDefTrip = `
   type Trip {
     id: ID, 
+    _id: ID,
     name: String
-    userId: ID,
-    address: String,
+    country: String,
+    city: String,
     totalPeriodDays: Int,
     stoppingPoints: [StoppingPoint],
   }

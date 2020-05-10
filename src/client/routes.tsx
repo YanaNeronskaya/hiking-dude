@@ -5,9 +5,10 @@ import { HomePage } from './components/pages/home/home.page';
 import { LogInPage } from './components/pages/login/login.page';
 import { SignInPage } from './components/pages/signin/signin.page';
 import { UserCabinet } from './components/pages/user-cabinet/user-cabinet.page';
+import { TripsCollectionsComponent } from './components/pages/trips-collections/trips-collections.page';
 import { BASE_ROUTES, USER_ROUTES } from '../constants/routes';
 import { ErrorPage } from './components/pages/error-login/error.page';
-import { withAuth } from '../client/components/hocs/requre-auth';
+import { withAuth } from './components/hocs/requre-auth';
 
 const routesRules = (
     <Switch>
@@ -20,6 +21,15 @@ const routesRules = (
         <Route exact path={USER_ROUTES.USER_CABINET}>
             {withAuth(UserCabinet)}
         </Route>
+        <Route
+            exact
+            path={[
+                BASE_ROUTES.TRIPS_COLLECTIONS,
+                BASE_ROUTES.TRIPS_COLLECTIONS_LOCATION,
+            ]}
+        >
+            <TripsCollectionsComponent />
+        </Route>
         <Route exact path={BASE_ROUTES.HOME}>
             <HomePage />
         </Route>
@@ -31,7 +41,7 @@ interface RoutesProps {
     isSsr: boolean;
 }
 
-export const Routes: React.SFC<RoutesProps> = ({ url, isSsr = false }) => {
+export const Routes: React.FC<RoutesProps> = ({ url, isSsr = false }) => {
     const context = {};
 
     return isSsr ? (

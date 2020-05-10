@@ -1,20 +1,9 @@
-//@ts-nocheck
-import { getUserDb } from '../../server/controllers/user.db';
-import { GraphQLDateTime } from 'graphql-iso-date';
-
-const customScalarResolver = {
-    Date: GraphQLDateTime,
-};
-
+import { User } from '../../constants/interface';
+import { customScalarResolver } from './common.resolver';
 
 export const userResolver = {
     ...customScalarResolver,
-    user: (parentValue, args, req) => {
+    user: (parentValue: any, args: any, req: { req: { user: User } }) => {
         return req.req.user;
-    },
-    userTrips: ({ id }) => {
-        const user = getUserDb(id);
-
-        return user.trips;
     },
 };

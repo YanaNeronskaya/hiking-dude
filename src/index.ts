@@ -9,13 +9,13 @@ import cors from '@koa/cors';
 
 import { template } from './template';
 import { serverRender } from '../dist/server.js';
-import { USER_ROUTES } from './constants/routes';
-import { addNewUser } from './server/controllers/user.db';
-import { userSchema } from './graphql/schemas/user.schema';
-
+import { connectDb } from './server/db';
 import passport from './authentification/passport';
-//import { api } from './authentification/api';
+import { rootSchema } from './graphql/schemas';
 import { config } from './authentification/config';
+import { BASE_ROUTES, USER_ROUTES } from './constants/routes';
+
+connectDb();
 
 const app = new Koa();
 const router = new Router();
@@ -30,30 +30,33 @@ app.use(session(app));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//api = api(router);
-
-//router.use('/api', api.routes());
-
-router.post(USER_ROUTES.ADD_NEW, (ctx, next) => {
-    addNewUser(ctx);
-    next();
-});
-
 router.all(
     '/graphql',
     graphqlHTTP({
-        schema: userSchema,
-        graphiql: false
+        schema: rootSchema,
+        graphiql: true,
     })
 );
+
 app.use(cors());
 app.use(router.routes()).use(router.allowedMethods());
 
-router.get('/*', (ctx, next) => {
-    const { content } = serverRender({ url: ctx.req.url });
+router.get(
+    [
+        BASE_ROUTES.HOME,
+        BASE_ROUTES.ERROR_LOGIN,
+        BASE_ROUTES.TRIPS_COLLECTIONS,
+        BASE_ROUTES.TRIPS_COLLECTIONS_LOCATION,
+        USER_ROUTES.USER_CABINET,
+        USER_ROUTES.SIGN_IN,
+        USER_ROUTES.LOG_IN,
+    ],
+    (ctx, next) => {
+        const { content } = serverRender({ url: ctx.req.url });
 
-    ctx.response.body = template('Server Rendered Page', content);
-});
+        ctx.response.body = template('Server Rendered Page', content);
+    }
+);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('The server is listening on the 3000 port');
